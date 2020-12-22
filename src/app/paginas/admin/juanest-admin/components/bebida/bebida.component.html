@@ -1,0 +1,103 @@
+<div class="pl-4 pr-4">
+  <div class="row">
+    <div class="col-sm-5 col-md-3 mb-3 mt-3 pl-md-5 pr-md-3 pl-sm-2">
+      <div class="card shadow bg-white">
+        <div class="card-body">
+          <h5 class="card-title m-0 text-muted"><small><strong>AGREGAR</strong></small></h5>
+          <hr>
+            <button class="btn btn-sm btn-dark mb-4" routerLink="/admin/cevicheria/juanest/principal/productos/bebidas/form">
+              <svg width="1em" height="1em" viewBox="0 0 16 20" class="bi bi-plus-circle-fill mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+              </svg>
+              <strong>Nueva Bebida</strong>
+            </button>
+          <h5 class="card-title m-0 text-muted"><small><strong>FILTRO</strong></small></h5>
+          <hr>
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label mr-0">Nombre</label>
+            <div class="col-sm-8">
+              <input type="text" [(ngModel)]="nombre" class="form-control" id="inputPassword">
+            </div>
+          </div>
+
+          <div class="text-right">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+              <button class="btn btn-sm btn-dark mb-2" (click)="buscarBebida()">
+                <svg width="1em" height="1em" viewBox="0 0 16 19" class="bi bi-search mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                  <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                </svg>
+                <strong>Buscar</strong>
+              </button>
+            <button *ngIf="btnMostrarTodo==true" class="btn btn-sm btn-warning mb-2" (click)="listarBebidas()">
+              <strong>Listar Todo</strong>
+            </button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="col-sm-7 col-md-9 mt-3 pr-md-5 pl-md-4 pl-sm-2">
+  <div class="card shadow">
+      <div class="card-header">
+          <h5 class="card-title m-0 text-muted"><small>REGISTRO DE BEBIDAS</small></h5>
+      </div>
+      <div class="card-body">
+        <div>
+            <div class="table-responsive p-3">
+              <table class="table table-hover">
+                  <thead class="thead-light text-center">
+                      <tr class="">
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Litraje</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acción</th>
+                      </tr>
+                  </thead>
+                  <tbody class="text-center">
+                      <tr *ngFor="let bebida of bebidas">
+                          <td><strong>{{bebida.id}}</strong></td>
+                          <td>{{bebida.nombre}}</td>
+                          <td>s/.{{bebida.precio}} soles</td>
+                          <td>{{bebida.litraje}}</td>
+                          <td>
+                              <div *ngIf="bebida.estado==true else deshabilitado">
+                                  <span class="badge badge-pill badge-success">Habilitado</span>
+                                </div>
+                                <ng-template #deshabilitado>
+                                      <span class="badge badge-pill badge-danger">Deshabilitado</span>
+                                </ng-template>
+                          </td>
+                          <td>
+                              <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                  <button type="button" class="btn btn-warning" [routerLink]="['/admin/cevicheria/juanest/principal/productos/bebidas/form',bebida.id]">
+                                      <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                      </svg>
+                                  </button>
+                                      <button type="button" class="btn btn-danger" *ngIf="bebida.estado==true else desha" (click)="cambiarEstadoBebida(bebida.id)">
+                                          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                              <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                                            </svg>
+                                      </button>
+                                    <ng-template #desha>
+                                      <button type="button" class="btn btn-success" (click)="cambiarEstadoBebida(bebida.id)">
+                                          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                              <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                            </svg>
+                                      </button>
+                                    </ng-template>
+                                </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

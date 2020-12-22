@@ -1,0 +1,33 @@
+.carousel-inner .carousel-item{
+    height: 83vh;
+}
+.banner1{
+    height: 83vh;
+    background: #000;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../../assets/img/bienvenida/ceviche.jpg");
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.banner2{
+    height: 83vh;
+    background: #000;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../../assets/img/bienvenida/chicharron.jpg");
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.banner3{
+    height: 83vh;
+    background: #000;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../../assets/img/bienvenida/arroz-mariscos.jpg");
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

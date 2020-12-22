@@ -1,0 +1,65 @@
+<div class="ml-5 mr-5">
+  <div class="card shadow mt-3">
+    <div class="card-header">
+      <h5 class="card-title m-0 text-muted"><small>FORMULARIO DE PEDIDO</small></h5>
+    </div>
+    <div class="card-body">
+      <div class="pl-5 pr-5">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title m-0 text-muted"><small>DATOS DEL CLIENTE</small></h5>
+          </div>
+        <div class="card-body">
+          <div class="container">
+            <div class="form-row">
+              <div class="col">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <strong>N° de Mesa</strong>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" [(ngModel)]="mesa.id" disabled>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <strong>Fecha</strong>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" [(ngModel)]="fechaPedido" disabled>
+                </div>
+              </div>
+            </div>
+            <div class="form-row mt-3">
+              <div class="col">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <strong>Cliente</strong>
+                    </div>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Nombre">
+                </div>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="card mt-3">
+          <div class="card-header">
+            <h5 class="card-title m-0 text-muted"><small>REGISTRO DE PEDIDO</small></h5>
+          </div>
+          <div class="card-body">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

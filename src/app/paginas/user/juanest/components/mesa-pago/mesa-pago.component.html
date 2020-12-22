@@ -1,0 +1,36 @@
+<div>
+  <div class="row mt-3">
+    <div class="col-md-3 col-sm-4 mb-3">
+      <div class="container">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5 class="card-title m-0 text-muted"><small><strong>AGREGAR</strong></small></h5>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-8">
+      <div class="container">
+        <!--h3 class="text-center pt-1 pb-2"><strong>Mesas Disponibles</strong></h3-->
+        <div class="row">
+          <div class="col-md-3 col-lg-2 col-sm-4 mb-3" *ngFor = "let mesa of mesasPagos">
+            <div class="card shadow border-0 "  type="button" [routerLink]="['/cevicheria/juanest/panel/principal/mesas-pagos',mesa.id,'form']">
+              <div class="card-body">
+                <div class="text-center mb-2">
+                  <small><strong>MESA {{mesa.codigo}}</strong></small>
+                </div>
+                <div class="text-center mt-1">
+                  <img class="mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQcTvgTIpP3I1msljGTjxBVjZs9ndLi6q63kg&usqp=CAU" style="width:40px;">
+                  <p class="mb-0"><strong>Cliente: </strong> Persona con apellido</p>
+                </div>
+              </div>
+              <div class="card-footer bg-danger p-1 m-0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

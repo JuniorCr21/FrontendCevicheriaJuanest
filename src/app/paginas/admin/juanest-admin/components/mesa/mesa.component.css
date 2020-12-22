@@ -1,0 +1,8 @@
+.imgMesa{
+    height: 100px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("https://scontent.ftru2-2.fna.fbcdn.net/v/t1.0-9/1383328_686645318130185_286885175532140536_n.jpg?_nc_cat=110&ccb=2&_nc_sid=8bfeb9&_nc_eui2=AeHFETHf9X0GhgpzTdviH6f00W_o-zm3JpbRb-j7ObcmlmxCJO7F_qfYHZRGQPJYCqR0-R1idCj_N8-vJnQlLGvW&_nc_ohc=vSlNZYXp-p4AX9GNiPJ&_nc_ht=scontent.ftru2-2.fna&oh=60ed0205faba953c507ad6df0f06e2b5&oe=5FBC97FD");
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
