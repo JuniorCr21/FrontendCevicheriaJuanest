@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import swal from 'sweetalert2';
 import {Router} from '@angular/router';
 
+import {LoginService} from './login.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,27 +11,23 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  usuario:String="cjuanest20"; usu='';
-  contra:String="cjuanest20"; con='';
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginService:LoginService) { }
 
   ngOnInit(): void {
   }
 
-  validarForm(usuario,contra){
-    if(usuario===this.usuario && contra === this.contra){
+  validarLogin(){
+    if(this.loginService.getItem()===true){
       this.goto("/admin/cevicheria/juanest/principal");
-    }else{
-      this.usu="";
-      this.con="";
       swal.fire({
         position: 'center',
-        icon: 'error',
-        title: "Usuario y/o Contraseña incorrecta",
+        icon: 'success',
+        title: "BIENVENIDO ADMIN",
         showConfirmButton: false,
-        timer: 1200
+        timer: 1000
       })
+    }else{
+      this.goto("/admin/cevicheria/juanest/login");
     }
   }
 

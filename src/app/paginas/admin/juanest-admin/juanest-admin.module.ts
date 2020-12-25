@@ -16,6 +16,7 @@ import { FormPlatoComponent } from './components/plato/form-plato/form-plato.com
 import { FormBebidaComponent } from './components/bebida/form-bebida/form-bebida.component';
 import { FormGuarnicionComponent } from './components/guarnicion/form-guarnicion/form-guarnicion.component';
 
+
 //SERVICES
 import { MesaService } from './services/mesa.service';
 import { PlatoService } from './services/plato.service';
@@ -34,7 +35,7 @@ import { GuarnicionService } from './services/guarnicion.service';
     FormMesaComponent,
     FormPlatoComponent,
     FormBebidaComponent,
-    FormGuarnicionComponent
+    FormGuarnicionComponent,
   ],
   imports: [
     CommonModule,

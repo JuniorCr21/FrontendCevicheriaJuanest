@@ -11,6 +11,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
+import {LoginService} from './components/header/login.service';
+import { LoginComponent } from './components/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +21,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     FooterComponent,
     HomeComponent,
     NotfoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  exports:[
+  ],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
